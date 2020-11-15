@@ -17,4 +17,6 @@ target 'stellar' do
   pod 'Moya-ObjectMapper/RxSwift', '~> 2.9'
   pod 'DifferenceKit/Core'
   pod 'Action'
+  pod 'Reusable'
+  pod 'Kingfisher', '~> 5.0'
 end
