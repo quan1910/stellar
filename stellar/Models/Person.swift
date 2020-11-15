@@ -65,6 +65,7 @@ final class Person: ImmutableMappable {
     var id: String?
     var gender: Gender?
     var name: Name?
+    var picture: Picture?
     var location: Location?
     var email: String?
     var dob: DateOfBirth?
@@ -77,13 +78,64 @@ final class Person: ImmutableMappable {
         
         gender = try? map.value("gender", using: EnumTransform<Gender>())
         name = try? map.value("name")
-        
+        picture = try? map.value("picture")
         location = try? map.value("location")
         email = try? map.value("email")
         dob = try? map.value("dob")
         homePhone = try? map.value("phone")
         cellPhone = try? map.value("cell")
         nat = try? map.value("nat")
-        
+    }
+    
+    var fullName: String? {
+        get {
+            guard let name = name else { return nil }
+            var returnName = ""
+            if let title = name.title {
+                returnName += title
+            }
+            
+            if let lastName = name.last {
+                returnName += " \(lastName)"
+            }
+            
+            if let firstName = name.first {
+                returnName += " \(firstName)"
+            }
+            return returnName
+        }
+    }
+    
+    var fullAddress: String? {
+        get {
+            guard let location = location else { return nil }
+            var returnAddress = ""
+            if let streetNumber = location.street?.number, let streetName = location.street?.name {
+                returnAddress += "\(streetNumber) \(streetName) Street"
+            }
+            
+            if let cityName = location.city {
+                returnAddress += ", \(cityName) City"
+            }
+            
+            if let stateName = location.state {
+                returnAddress += ", \(stateName) State"
+            }
+            return returnAddress
+        }
+    }
+    
+    var birthDate: String? {
+        get {
+            guard let dob = dob else { return nil }
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd/MM/yyyy"
+            if let date = dob.date {
+                return dateFormatter.string(from: date)
+            }
+            
+            return nil
+        }
     }
 }

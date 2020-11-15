@@ -17,12 +17,20 @@
 		C26EA55D255D7A8C0007871A /* Rx+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26EA55C255D7A8C0007871A /* Rx+Extension.swift */; };
 		C26EA560255D7D810007871A /* NetworkLoggerPlugin+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26EA55F255D7D810007871A /* NetworkLoggerPlugin+Extension.swift */; };
 		C26EA563255D7EEE0007871A /* CandidateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26EA562255D7EEE0007871A /* CandidateResponse.swift */; };
+		C2A50BA8255FB44800EB58AC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A50BA7255FB44800EB58AC /* HomeViewController.swift */; };
+		C2A50BAC255FB45200EB58AC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A50BAB255FB45200EB58AC /* HomeViewModel.swift */; };
+		C2A50BAF255FB8D700EB58AC /* HomeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A50BAE255FB8D700EB58AC /* HomeData.swift */; };
+		C2A50BB2255FBAF000EB58AC /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2A50BB1255FBAF000EB58AC /* HomeViewController.storyboard */; };
+		C2A50BB6255FBBA800EB58AC /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A50BB5255FBBA800EB58AC /* CardView.swift */; };
+		C2B41A8425612ED90087F036 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B41A8325612ED90087F036 /* UIView+Extension.swift */; };
+		C2B41A8725612F970087F036 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B41A8625612F970087F036 /* Colors.swift */; };
 		C2B7E5AE255AA27500DBB611 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B7E5AD255AA27500DBB611 /* AppDelegate.swift */; };
 		C2B7E5B0255AA27500DBB611 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B7E5AF255AA27500DBB611 /* SceneDelegate.swift */; };
 		C2B7E5B2255AA27500DBB611 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B7E5B1255AA27500DBB611 /* ViewController.swift */; };
 		C2B7E5B5255AA27500DBB611 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2B7E5B3255AA27500DBB611 /* Main.storyboard */; };
 		C2B7E5B7255AA27900DBB611 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2B7E5B6255AA27900DBB611 /* Assets.xcassets */; };
 		C2B7E5BA255AA27900DBB611 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2B7E5B8255AA27900DBB611 /* LaunchScreen.storyboard */; };
+		C2C141B12561244600D81DC2 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2C141B02561244600D81DC2 /* CardView.xib */; };
 		C2DDB955255BDFFD00224821 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DDB954255BDFFD00224821 /* API.swift */; };
 		C2DDB959255BE11C00224821 /* RequestTimeoutPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DDB958255BE11C00224821 /* RequestTimeoutPlugin.swift */; };
 		C2DDB95D255BE14900224821 /* TargetType+rawTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DDB95C255BE14900224821 /* TargetType+rawTarget.swift */; };
@@ -41,6 +49,13 @@
 		C26EA55C255D7A8C0007871A /* Rx+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+Extension.swift"; sourceTree = "<group>"; };
 		C26EA55F255D7D810007871A /* NetworkLoggerPlugin+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkLoggerPlugin+Extension.swift"; sourceTree = "<group>"; };
 		C26EA562255D7EEE0007871A /* CandidateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidateResponse.swift; sourceTree = "<group>"; };
+		C2A50BA7255FB44800EB58AC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C2A50BAB255FB45200EB58AC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		C2A50BAE255FB8D700EB58AC /* HomeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeData.swift; sourceTree = "<group>"; };
+		C2A50BB1255FBAF000EB58AC /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
+		C2A50BB5255FBBA800EB58AC /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		C2B41A8325612ED90087F036 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		C2B41A8625612F970087F036 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		C2B7E5AA255AA27500DBB611 /* stellar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stellar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2B7E5AD255AA27500DBB611 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2B7E5AF255AA27500DBB611 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +64,7 @@
 		C2B7E5B6255AA27900DBB611 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C2B7E5B9255AA27900DBB611 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C2B7E5BB255AA27900DBB611 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2C141B02561244600D81DC2 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		C2DDB954255BDFFD00224821 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		C2DDB958255BE11C00224821 /* RequestTimeoutPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTimeoutPlugin.swift; sourceTree = "<group>"; };
 		C2DDB95C255BE14900224821 /* TargetType+rawTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TargetType+rawTarget.swift"; sourceTree = "<group>"; };
@@ -90,6 +106,7 @@
 			children = (
 				C26EA537255D4DD40007871A /* Candidate */,
 				C26EA54A255D770B0007871A /* Environment.swift */,
+				C2B41A8625612F970087F036 /* Colors.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -113,6 +130,35 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		C2A50BA5255FB18C00EB58AC /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				C2A50BA6255FB1B000EB58AC /* Home */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		C2A50BA6255FB1B000EB58AC /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C2A50BB4255FBB9A00EB58AC /* Views */,
+				C2A50BA7255FB44800EB58AC /* HomeViewController.swift */,
+				C2A50BAB255FB45200EB58AC /* HomeViewModel.swift */,
+				C2A50BAE255FB8D700EB58AC /* HomeData.swift */,
+				C2A50BB1255FBAF000EB58AC /* HomeViewController.storyboard */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C2A50BB4255FBB9A00EB58AC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C2A50BB5255FBBA800EB58AC /* CardView.swift */,
+				C2C141B02561244600D81DC2 /* CardView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		C2B7E5A1255AA27500DBB611 = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +180,7 @@
 		C2B7E5AC255AA27500DBB611 /* stellar */ = {
 			isa = PBXGroup;
 			children = (
+				C2A50BA5255FB18C00EB58AC /* Scenes */,
 				C26EA538255D4E540007871A /* Models */,
 				C26EA536255D4DCE0007871A /* Services */,
 				C2DDB913255BD51D00224821 /* Extension */,
@@ -165,6 +212,7 @@
 			children = (
 				C26EA55C255D7A8C0007871A /* Rx+Extension.swift */,
 				C26EA55F255D7D810007871A /* NetworkLoggerPlugin+Extension.swift */,
+				C2B41A8325612ED90087F036 /* UIView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -237,7 +285,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2A50BB2255FBAF000EB58AC /* HomeViewController.storyboard in Resources */,
 				C2B7E5BA255AA27900DBB611 /* LaunchScreen.storyboard in Resources */,
+				C2C141B12561244600D81DC2 /* CardView.xib in Resources */,
 				C2B7E5B7255AA27900DBB611 /* Assets.xcassets in Resources */,
 				C2B7E5B5255AA27500DBB611 /* Main.storyboard in Resources */,
 			);
@@ -293,8 +343,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2B7E5B2255AA27500DBB611 /* ViewController.swift in Sources */,
+				C2A50BAC255FB45200EB58AC /* HomeViewModel.swift in Sources */,
 				C26EA540255D73470007871A /* CandidateService.swift in Sources */,
 				C26EA544255D73580007871A /* CandidateTargets.swift in Sources */,
+				C2A50BA8255FB44800EB58AC /* HomeViewController.swift in Sources */,
 				C26EA55D255D7A8C0007871A /* Rx+Extension.swift in Sources */,
 				C2DDB95D255BE14900224821 /* TargetType+rawTarget.swift in Sources */,
 				C26EA560255D7D810007871A /* NetworkLoggerPlugin+Extension.swift in Sources */,
@@ -303,11 +355,15 @@
 				C26EA547255D74360007871A /* TargetType+Extensions.swift in Sources */,
 				C26EA53D255D5BA20007871A /* Location.swift in Sources */,
 				C26EA54B255D770B0007871A /* Environment.swift in Sources */,
+				C2B41A8725612F970087F036 /* Colors.swift in Sources */,
 				C2B7E5B0255AA27500DBB611 /* SceneDelegate.swift in Sources */,
+				C2A50BB6255FBBA800EB58AC /* CardView.swift in Sources */,
+				C2B41A8425612ED90087F036 /* UIView+Extension.swift in Sources */,
 				C2DDB955255BDFFD00224821 /* API.swift in Sources */,
 				C26EA53A255D4EAC0007871A /* Person.swift in Sources */,
 				C26EA563255D7EEE0007871A /* CandidateResponse.swift in Sources */,
 				C2DDB960255BE19C00224821 /* DisableLocalCachePlugin.swift in Sources */,
+				C2A50BAF255FB8D700EB58AC /* HomeData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
