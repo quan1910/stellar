@@ -17,22 +17,42 @@ protocol HomeViewModelProtocol {
 
 final class HomeViewModel: HomeViewModelProtocol {
 
+    // Services
     private let candidateService: CandidateServiceType
+    private let localStorageService: LocalStorageServiceType
+
+    // Datas
     private let _personDataStream = BehaviorRelay<[Person]>(value: [])
+    private var persons: [Person] = []
+    private var favoritePersons: [Person] = []
+    private let favoriteStorage = "favoritedCandidates"
     
+    // Actions
     private lazy var loadCandidatesAction = Action<Void, CandidateResponse> { [unowned self] in
         self.candidateService.getCandidates(offset: 50)
     }
     
     private let disposeBag = DisposeBag()
 
-    init(candidateService: CandidateServiceType) {
+    init(candidateService: CandidateServiceType,
+         localStorageService: LocalStorageServiceType) {
         self.candidateService = candidateService
+        self.localStorageService = localStorageService
         configureFetchCandidates()
     }
 
     func fetchCandidates() {
         loadCandidatesAction.execute()
+        favoritePersons = getFavorites()
+    }
+    
+    func addFavorite(_ person: Person) {
+        favoritePersons.append(person)
+        localStorageService.saveData(favoritePersons, key: favoriteStorage)
+    }
+    
+    func getFavorites() -> [Person] {
+        return localStorageService.loadData(favoriteStorage, dataType: Person.self) ?? []
     }
     
     private func configureFetchCandidates() {
@@ -46,8 +66,9 @@ final class HomeViewModel: HomeViewModelProtocol {
 
         loadCandidatesAction
             .elements
-            .subscribeNext { [weak self] candidates in
-                self?._personDataStream.accept(candidates.candidates)
+            .subscribeNext { [weak self] response in
+                self?.persons = response.candidates
+                self?._personDataStream.accept(response.candidates)
             }
             .disposed(by: disposeBag)
 

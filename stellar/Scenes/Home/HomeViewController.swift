@@ -13,24 +13,27 @@ import RxCocoa
 final class HomeViewController: UIViewController {
 
     private let candidateService: CandidateServiceType = AppEnvironment.current.candidateService
+    private let localStorageService: LocalStorageServiceType = AppEnvironment.current.localStorageService
     
     private let disposeBag = DisposeBag()
     private var cards = [CardView]()
     
     lazy var homeViewModel: HomeViewModel = {
-        let viewModel = HomeViewModel(candidateService: candidateService)
+        let viewModel = HomeViewModel(candidateService: candidateService,
+                                      localStorageService: localStorageService)
         return viewModel
     }()
 
-    private var numberOfCardOnScreen: Int = 5
+    private var numberOfCardOnScreen: Int = 3
     private let scales: [CGFloat] = [1, 0.9, 0.8, 0.7, 0.6, 0.5]
     private let alphas: [CGFloat] = [1, 0.85, 0.6, 0.45, 0.3, 0.15]
     private let cardSpacing: CGFloat = 60
     private var isCardAnimating = false
-    private let offsetRequired: CGFloat = 15
+    private let offsetRequired: CGFloat = 35
     private var dynamicAnimator: UIDynamicAnimator!
     private var panAttachmentBehavior: UIAttachmentBehavior!
     private var previousCardLocation: CGPoint?
+    private var currentStatus: CardStatus?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,12 +90,12 @@ final class HomeViewController: UIViewController {
            
             // Spacing card
             card.center.x = self.view.center.x
-            card.frame.origin.y = cards[0].frame.origin.y + (CGFloat(i) * cardSpacing)
+            card.frame.origin.y = firstCard.frame.origin.y + (CGFloat(i) * cardSpacing)
             
             self.view.addSubview(card)
         }
         
-        self.view.bringSubviewToFront(cards[0])
+        self.view.bringSubviewToFront(firstCard)
     }
     
     func animateNextCard() {
@@ -105,14 +108,15 @@ final class HomeViewController: UIViewController {
             UIView.animate(withDuration: duration, delay: (TimeInterval(i - 1) * (duration / 2)), usingSpringWithDamping: 0.6, initialSpringVelocity: 0.1, options: [], animations: {
                 card.transform = CGAffineTransform(scaleX: newDownscale, y: newDownscale)
                 card.alpha = newAlpha
-                if i == 1 {
-                    card.center = self.view.center
-                } else {
-                    card.center.x = self.view.center.x
-                    card.frame.origin.y = self.cards[1].frame.origin.y + (CGFloat(i - 1) * self.cardSpacing)
+                
+                card.center = self.view.center
+                
+                if i - 1 > 0 {
+                    card.frame.origin.y = self.cards[i - 1].frame.origin.y + self.cardSpacing
                 }
                 
             }, completion: { (_) in
+                // Add pan gensture to first next card
                 if i == 1 {
                     card.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(self.panHandler)))
                 }
@@ -121,7 +125,7 @@ final class HomeViewController: UIViewController {
         }
         
         // No more card lefts
-        if 4 > (cards.count - 1) {
+        if numberOfCardOnScreen > (cards.count - 1) {
             if cards.count != 1 {
                 self.view.bringSubviewToFront(cards[1])
             }
@@ -158,74 +162,49 @@ final class HomeViewController: UIViewController {
     
     @objc func panHandler(sender: UIPanGestureRecognizer) {
         if isCardAnimating { return }
+        guard let firstCard = cards.first else { return }
         
         let cardPanScreen = sender.location(in: view)
-        let cardPanLocation = sender.location(in: cards[0])
+        let cardPanLocation = sender.location(in: firstCard)
         switch sender.state {
         case .began:
-            previousCardLocation = cards[0].center
+            previousCardLocation = firstCard.center
             
             dynamicAnimator.removeAllBehaviors()
-            let offset = UIOffset(horizontal: cardPanLocation.x - cards[0].bounds.midX, vertical: cardPanLocation.y - cards[0].bounds.midY)
+            let offset = UIOffset(horizontal: cardPanLocation.x - firstCard.bounds.midX, vertical: cardPanLocation.y - firstCard.bounds.midY)
             
-            panAttachmentBehavior = UIAttachmentBehavior(item: cards[0], offsetFromCenter: offset, attachedToAnchor: cardPanScreen)
+            panAttachmentBehavior = UIAttachmentBehavior(item: firstCard, offsetFromCenter: offset, attachedToAnchor: cardPanScreen)
             dynamicAnimator.addBehavior(panAttachmentBehavior)
         case .changed:
             panAttachmentBehavior.anchorPoint = cardPanScreen
-            
-            if cards[0].center.x > (self.view.center.x + offsetRequired) {
-                cards[0].showCardStatus(.like)
-            } else if cards[0].center.x < (self.view.center.x - offsetRequired) {
-                cards[0].showCardStatus(.nah)
-            } else {
-                cards[0].hideStatusLabel()
-            }
-            
+            handleCardPanChanged(firstCard, sender: sender)
         case .ended:
-            
-            dynamicAnimator.removeAllBehaviors()
-            
-            // Pan not out of the required offset -> snap back to previous location
-            if !(cards[0].center.x > (self.view.center.x + offsetRequired) || cards[0].center.x < (self.view.center.x - offsetRequired)) {
-                // Snap back center
-                guard let cardLocation = previousCardLocation else { return }
-                let snapBackPreviousLocation = UISnapBehavior(item: cards[0], snapTo: cardLocation)
-                dynamicAnimator.addBehavior(snapBackPreviousLocation)
-            } else {
-                
-                // Create push away feeling
-                let velocity = sender.velocity(in: self.view)
-                let pushEffect = UIPushBehavior(items: [cards[0]], mode: .instantaneous)
-                pushEffect.pushDirection = CGVector(dx: velocity.x/10, dy: velocity.y/10)
-                pushEffect.magnitude = 125
-                dynamicAnimator.addBehavior(pushEffect)
-                
-                // Create spinning effect
-                var expectedAngle = CGFloat.pi / 2 // angular velocity of spin
-                let cardAngle: Double = atan2(Double(cards[0].transform.b), Double(cards[0].transform.a))
-                
-                expectedAngle = (cardAngle > 0) ? expectedAngle : (expectedAngle * -1)
-                let spinEffect = UIDynamicItemBehavior(items: [cards[0]])
-                spinEffect.friction = 0.3
-                spinEffect.allowsRotation = true
-                spinEffect.addAngularVelocity(CGFloat(expectedAngle), for: cards[0])
-                dynamicAnimator.addBehavior(spinEffect)
-                
-                animateNextCard()
-                discardFirstCard()
-            }
+            handleCardPanEnded(firstCard, sender: sender)
         default:
             break
         }
     }
     
     func discardFirstCard() {
+        guard let firstCard = cards.first else {
+            return
+        }
+        
+        // Improve discard animation with an interval timer
+        var cardOutOfScreenTimer: Timer? = nil
         self.isCardAnimating = true
-        UIView.animate(withDuration: 0.2, delay: 0.2, options: [.curveEaseIn], animations: {
-            self.cards[0].alpha = 0.0
-        }, completion: { (_) in
-            self.removeSwipedCard()
-            self.isCardAnimating = false
+        cardOutOfScreenTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { [weak self] (_) in
+            guard let self = self else { return }
+            if !self.view.bounds.contains(firstCard.center) {
+                cardOutOfScreenTimer?.invalidate()
+                self.isCardAnimating = true
+                UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseIn], animations: {
+                    firstCard.alpha = 0.0
+                }, completion: { [weak self] (_) in
+                    self?.removeSwipedCard()
+                    self?.isCardAnimating = false
+                })
+            }
         })
     }
     
@@ -234,5 +213,90 @@ final class HomeViewController: UIViewController {
         get {
             return true
         }
+    }
+    
+    private func handleCardPanChanged(_ card: CardView, sender: UIPanGestureRecognizer) {
+        if card.center.x > (self.view.center.x + offsetRequired) {
+            card.showCardStatus(.like)
+        } else if card.center.x < (self.view.center.x - offsetRequired) {
+            card.showCardStatus(.nah)
+        } else {
+            card.hideStatusLabel()
+        }
+    }
+    
+    private func handleCardPanEnded(_ card: CardView, sender: UIPanGestureRecognizer) {
+        dynamicAnimator.removeAllBehaviors()
+        // Pan not out of the required offset -> snap back to previous location
+        if !isCardShouldBeSwiped(card) {
+            addSnapToCenterEffect(card)
+        } else {
+            checkDirectionLastSwipe(card, sender: sender)
+            addPushEffect(card, sender: sender)
+            addSpinningEffect(card)
+            handleLogicCardStatus(card)
+            animateNextCard()
+            discardFirstCard()
+        }
+    }
+    
+    private func handleLogicCardStatus(_ card: CardView) {
+        switch card.currentStatus {
+        case .like:
+            guard let model = card.personModel else { return }
+            homeViewModel.addFavorite(model)
+        case .nah:
+            break
+        default:
+            break
+        }
+    }
+    
+    private func addSpinningEffect(_ card: CardView) {
+        // Create spinning effect
+        var expectedAngle = CGFloat.pi / 3
+        let cardAngle: Double = atan2(Double(card.transform.b), Double(card.transform.a))
+        
+        expectedAngle = (cardAngle > 0) ? expectedAngle : (expectedAngle * -1)
+        let spinEffect = UIDynamicItemBehavior(items: [card])
+        spinEffect.friction = 0.1
+        spinEffect.addAngularVelocity(CGFloat(expectedAngle), for: card)
+        spinEffect.allowsRotation = true
+        
+        dynamicAnimator.addBehavior(spinEffect)
+    }
+    
+    private func addPushEffect(_ card: CardView, sender: UIPanGestureRecognizer) {
+        // Create push away feeling
+        let touchInView = sender.translation(in: view)
+        
+        let pushEffect = UIPushBehavior(items: [card], mode: .instantaneous)
+        pushEffect.magnitude = 130
+        
+        // Push at the released direction
+        pushEffect.pushDirection = CGVector(dx: touchInView.x, dy: touchInView.y)
+        dynamicAnimator.addBehavior(pushEffect)
+    }
+    
+    private func addSnapToCenterEffect(_ card: CardView) {
+        // Snap back center
+        guard let cardLocation = previousCardLocation else { return }
+        let snapBackPreviousLocation = UISnapBehavior(item: card, snapTo: cardLocation)
+        dynamicAnimator.addBehavior(snapBackPreviousLocation)
+    }
+    
+    private func checkDirectionLastSwipe(_ card: CardView, sender: UIPanGestureRecognizer) {
+        if let direction = sender.direction {
+            switch direction {
+            case .left:
+                card.showCardStatus(.nah)
+            case .right:
+                card.showCardStatus(.like)
+            }
+        }
+    }
+    
+    private func isCardShouldBeSwiped(_ card: CardView) -> Bool {
+        return card.center.x > (self.view.center.x + offsetRequired) || card.center.x < (self.view.center.x - offsetRequired)
     }
 }

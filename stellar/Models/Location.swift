@@ -8,7 +8,7 @@
 import Foundation
 import ObjectMapper
 
-struct Street: ImmutableMappable {
+struct Street: ImmutableMappable, Codable {
     var number: Int?
     var name: String?
     
@@ -18,7 +18,7 @@ struct Street: ImmutableMappable {
     }
 }
 
-struct Cordinate: ImmutableMappable {
+struct Cordinate: ImmutableMappable, Codable {
     var longtitude: Double?
     var latitude: Double?
     
@@ -28,7 +28,7 @@ struct Cordinate: ImmutableMappable {
     }
 }
 
-struct TimeZone: ImmutableMappable {
+struct TimeZone: ImmutableMappable, Codable {
     var offset: Double?
     var description: String?
     
@@ -38,7 +38,7 @@ struct TimeZone: ImmutableMappable {
     }
 }
 
-struct Location: ImmutableMappable {
+struct Location: ImmutableMappable, Codable {
     var street: Street?
     var city: String?
     var state: String?

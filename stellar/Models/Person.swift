@@ -9,13 +9,13 @@ import Foundation
 import Foundation
 import ObjectMapper
 
-enum Gender: String {
+enum Gender: String, Codable {
     case male
     case female
     case notDisclosed
 }
 
-struct Name: ImmutableMappable {
+struct Name: ImmutableMappable, Codable {
     var title: String?
     var first: String?
     var last: String?
@@ -27,7 +27,7 @@ struct Name: ImmutableMappable {
     }
 }
 
-struct DateOfBirth: ImmutableMappable {
+struct DateOfBirth: ImmutableMappable, Codable {
     var date: Date?
     var age: Int?
     
@@ -37,7 +37,7 @@ struct DateOfBirth: ImmutableMappable {
     }
 }
 
-struct Picture: ImmutableMappable {
+struct Picture: ImmutableMappable, Codable {
     var large: String?
     var medium: String?
     var thumbnail: String?
@@ -49,7 +49,7 @@ struct Picture: ImmutableMappable {
     }
 }
 
-struct Identity: ImmutableMappable {
+struct Identity: ImmutableMappable, Codable {
     var name: String?
     var value: String?
     
@@ -60,7 +60,7 @@ struct Identity: ImmutableMappable {
 }
 
 
-final class Person: ImmutableMappable {
+final class Person: ImmutableMappable, Codable {
 
     var id: String?
     var gender: Gender?

@@ -9,10 +9,13 @@ import Foundation
 
 protocol EnvironmentType {
     var candidateService: CandidateServiceType { get }
+    var localStorageService: LocalStorageServiceType { get }
 }
 
 final class Environment: EnvironmentType {
     var candidateService: CandidateServiceType { return CandidateService.default }
+    
+    var localStorageService: LocalStorageServiceType { return LocalStorageService.default }
 }
 
 struct AppEnvironment {

@@ -39,6 +39,14 @@ final class CardView: UIView, NibOwnerLoadable {
     @IBOutlet private weak var nahLabel: CardStatusLabel!
     @IBOutlet private weak var infoStackView: UIStackView!
     
+    var currentStatus: CardStatus?
+    
+    var personModel: Person? {
+        get {
+            return model
+        }
+    }
+    
     private let buttonTypes: [InfoType] = [.name, .birthDate, .location, .phone, .password]
     
     override public init(frame: CGRect) {
@@ -112,6 +120,7 @@ final class CardView: UIView, NibOwnerLoadable {
     }
 
     func showCardStatus(_ status: CardStatus) {
+        currentStatus = status
         switch status {
         case .like:
             showLikeStatus()
@@ -187,6 +196,8 @@ final class CardView: UIView, NibOwnerLoadable {
                 self.isHidingStatusLabel = false
             })
         }
+        
+        currentStatus = nil
     }
     
     private func showInfoType(_ type: InfoType) {

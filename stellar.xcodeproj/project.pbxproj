@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		32966B524B1C32EE4F193518 /* Pods_stellar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E5513D1E1E24116F5F5425 /* Pods_stellar.framework */; };
+		C238DD0825669B160043EF88 /* PanGestureRecognizer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C238DD0725669B160043EF88 /* PanGestureRecognizer+Extension.swift */; };
+		C254992C2565581B0031D7D8 /* LocalStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C254992B2565581B0031D7D8 /* LocalStorageService.swift */; };
 		C26EA53A255D4EAC0007871A /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26EA539255D4EAC0007871A /* Person.swift */; };
 		C26EA53D255D5BA20007871A /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26EA53C255D5BA20007871A /* Location.swift */; };
 		C26EA540255D73470007871A /* CandidateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26EA53F255D73470007871A /* CandidateService.swift */; };
@@ -40,6 +42,8 @@
 /* Begin PBXFileReference section */
 		20E5513D1E1E24116F5F5425 /* Pods_stellar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_stellar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A05EBD9EDE60FC06E6B3078 /* Pods-stellar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stellar.release.xcconfig"; path = "Target Support Files/Pods-stellar/Pods-stellar.release.xcconfig"; sourceTree = "<group>"; };
+		C238DD0725669B160043EF88 /* PanGestureRecognizer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PanGestureRecognizer+Extension.swift"; sourceTree = "<group>"; };
+		C254992B2565581B0031D7D8 /* LocalStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageService.swift; sourceTree = "<group>"; };
 		C26EA539255D4EAC0007871A /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		C26EA53C255D5BA20007871A /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		C26EA53F255D73470007871A /* CandidateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidateService.swift; sourceTree = "<group>"; };
@@ -107,6 +111,7 @@
 				C26EA537255D4DD40007871A /* Candidate */,
 				C26EA54A255D770B0007871A /* Environment.swift */,
 				C2B41A8625612F970087F036 /* Colors.swift */,
+				C254992B2565581B0031D7D8 /* LocalStorageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -213,6 +218,7 @@
 				C26EA55C255D7A8C0007871A /* Rx+Extension.swift */,
 				C26EA55F255D7D810007871A /* NetworkLoggerPlugin+Extension.swift */,
 				C2B41A8325612ED90087F036 /* UIView+Extension.swift */,
+				C238DD0725669B160043EF88 /* PanGestureRecognizer+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -343,6 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2B7E5B2255AA27500DBB611 /* ViewController.swift in Sources */,
+				C254992C2565581B0031D7D8 /* LocalStorageService.swift in Sources */,
 				C2A50BAC255FB45200EB58AC /* HomeViewModel.swift in Sources */,
 				C26EA540255D73470007871A /* CandidateService.swift in Sources */,
 				C26EA544255D73580007871A /* CandidateTargets.swift in Sources */,
@@ -354,6 +361,7 @@
 				C2B7E5AE255AA27500DBB611 /* AppDelegate.swift in Sources */,
 				C26EA547255D74360007871A /* TargetType+Extensions.swift in Sources */,
 				C26EA53D255D5BA20007871A /* Location.swift in Sources */,
+				C238DD0825669B160043EF88 /* PanGestureRecognizer+Extension.swift in Sources */,
 				C26EA54B255D770B0007871A /* Environment.swift in Sources */,
 				C2B41A8725612F970087F036 /* Colors.swift in Sources */,
 				C2B7E5B0255AA27500DBB611 /* SceneDelegate.swift in Sources */,
