@@ -90,8 +90,9 @@ final class CardView: UIView, NibOwnerLoadable {
         
         avatarImageView.layer.cornerRadius = avatarImageView.frame.size.height/2
         avatarImageView.layer.masksToBounds = true
-        avatarImageView.layer.borderWidth = 1
-        avatarImageView.layer.borderColor = UIColor.systemGray4.cgColor
+        
+        avatarImageView.layer.borderWidth = 3
+        avatarImageView.layer.borderColor = UIColor.gray.cgColor
         
         seperatorLine.backgroundColor = .gray
 
