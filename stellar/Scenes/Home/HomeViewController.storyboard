@@ -1,26 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gOg-bY-QiQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mzF-eb-MCP">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Home View Controller-->
-        <scene sceneID="TIU-vs-toX">
+        <scene sceneID="GWZ-ec-pwK">
             <objects>
-                <viewController id="gOg-bY-QiQ" customClass="HomeViewController" customModule="stellar" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="g8p-fv-Lpi">
+                <viewController id="mzF-eb-MCP" customClass="HomeViewController" customModule="stellar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="glI-ON-oxd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="68o-px-Bit"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NX6-4W-R59">
+                                <rect key="frame" x="319" y="60" width="79" height="30"/>
+                                <state key="normal" title="My Favorite"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1m-Jd-IUd">
+                                <rect key="frame" x="16" y="60" width="73" height="30"/>
+                                <state key="normal" title="Let's reset"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zB6-pX-4UK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="g1m-Jd-IUd" firstAttribute="leading" secondItem="zB6-pX-4UK" secondAttribute="leading" constant="16" id="IuX-0T-Xz9"/>
+                            <constraint firstItem="NX6-4W-R59" firstAttribute="top" secondItem="zB6-pX-4UK" secondAttribute="top" constant="16" id="hoJ-Pa-p1b"/>
+                            <constraint firstItem="zB6-pX-4UK" firstAttribute="trailing" secondItem="NX6-4W-R59" secondAttribute="trailing" constant="16" id="s2x-E3-0b1"/>
+                            <constraint firstItem="g1m-Jd-IUd" firstAttribute="top" secondItem="zB6-pX-4UK" secondAttribute="top" constant="16" id="tek-Nw-1cD"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="myFavoriteBtn" destination="NX6-4W-R59" id="RYU-0X-HrX"/>
+                        <outlet property="reloadBtn" destination="g1m-Jd-IUd" id="YjV-Wk-PkX"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NIG-qJ-v2R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tte-U7-fWX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="52"/>
+            <point key="canvasLocation" x="-541" y="-70"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

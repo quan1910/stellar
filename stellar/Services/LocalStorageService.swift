@@ -10,6 +10,7 @@ import Foundation
 protocol LocalStorageServiceType {
     func saveData<T: Codable>(_ data: T, key: String)
     func loadData<T: Decodable>(_ key: String, dataType: T.Type) -> [T]?
+    func removeAll()
 }
 
 final class LocalStorageService: LocalStorageServiceType {
@@ -18,6 +19,12 @@ final class LocalStorageService: LocalStorageServiceType {
     
     init(userDefault: UserDefaults) {
         self.userDefault = userDefault
+    }
+    
+    func removeAll() {
+        if let appDomain = Bundle.main.bundleIdentifier {
+                UserDefaults.standard.removePersistentDomain(forName: appDomain)
+            }
     }
     
     func saveData<T: Codable>(_ data: T, key: String) {

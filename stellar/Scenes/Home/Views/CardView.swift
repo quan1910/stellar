@@ -66,7 +66,7 @@ final class CardView: UIView, NibOwnerLoadable {
         guard let urlString = model.picture?.large, let url = URL(string: urlString) else {
             return
         }
-        self.avatarImageView.kf.setImage(with: url, completionHandler:  { [weak self] result in
+        self.avatarImageView.kf.setImage(with: url, completionHandler:  { result in
             
             switch result {
             
@@ -103,6 +103,9 @@ final class CardView: UIView, NibOwnerLoadable {
         for type in buttonTypes {
             let button = CardInfoButton()
             button.infoType = type
+            if type == .name {
+                button.setState(.selected)
+            }
             button.didTap = { [weak self] infoType in
                 guard let self = self else { return }
                 self.showInfoType(infoType)
@@ -216,7 +219,7 @@ final class CardView: UIView, NibOwnerLoadable {
             infoValueLabel.text = model?.cellPhone
         case .password:
             infoTitleLabel.text = "My password is:"
-            infoValueLabel.text = model?.id?.description
+//            infoValueLabel.text = model?.id?.description
         }
     }
 }
@@ -289,7 +292,7 @@ final class CardInfoButton: UIButton {
         setState(.notSelected)
     }
     
-    private func setState(_ state: State) {
+    func setState(_ state: State) {
         tintColor = (state == .selected) ? .systemGreen : .systemGray
     }
     

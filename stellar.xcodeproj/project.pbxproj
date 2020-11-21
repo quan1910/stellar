@@ -24,12 +24,15 @@
 		C2A50BAF255FB8D700EB58AC /* HomeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A50BAE255FB8D700EB58AC /* HomeData.swift */; };
 		C2A50BB2255FBAF000EB58AC /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2A50BB1255FBAF000EB58AC /* HomeViewController.storyboard */; };
 		C2A50BB6255FBBA800EB58AC /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A50BB5255FBBA800EB58AC /* CardView.swift */; };
+		C2AF67DE256903E200C9DA6A /* StellarDefaultCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AF67DD256903E200C9DA6A /* StellarDefaultCodable.swift */; };
+		C2AF67E3256907F400C9DA6A /* LoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AF67E2256907F400C9DA6A /* LoadingOverlay.swift */; };
+		C2AF67E72569084C00C9DA6A /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AF67E62569084C00C9DA6A /* LoadingView.swift */; };
+		C2AF67EB2569085600C9DA6A /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2AF67EA2569085600C9DA6A /* LoadingView.xib */; };
 		C2B41A8425612ED90087F036 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B41A8325612ED90087F036 /* UIView+Extension.swift */; };
 		C2B41A8725612F970087F036 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B41A8625612F970087F036 /* Colors.swift */; };
 		C2B7E5AE255AA27500DBB611 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B7E5AD255AA27500DBB611 /* AppDelegate.swift */; };
 		C2B7E5B0255AA27500DBB611 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B7E5AF255AA27500DBB611 /* SceneDelegate.swift */; };
 		C2B7E5B2255AA27500DBB611 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B7E5B1255AA27500DBB611 /* ViewController.swift */; };
-		C2B7E5B5255AA27500DBB611 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2B7E5B3255AA27500DBB611 /* Main.storyboard */; };
 		C2B7E5B7255AA27900DBB611 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2B7E5B6255AA27900DBB611 /* Assets.xcassets */; };
 		C2B7E5BA255AA27900DBB611 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2B7E5B8255AA27900DBB611 /* LaunchScreen.storyboard */; };
 		C2C141B12561244600D81DC2 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2C141B02561244600D81DC2 /* CardView.xib */; };
@@ -58,13 +61,16 @@
 		C2A50BAE255FB8D700EB58AC /* HomeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeData.swift; sourceTree = "<group>"; };
 		C2A50BB1255FBAF000EB58AC /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
 		C2A50BB5255FBBA800EB58AC /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		C2AF67DD256903E200C9DA6A /* StellarDefaultCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StellarDefaultCodable.swift; sourceTree = "<group>"; };
+		C2AF67E2256907F400C9DA6A /* LoadingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingOverlay.swift; sourceTree = "<group>"; };
+		C2AF67E62569084C00C9DA6A /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		C2AF67EA2569085600C9DA6A /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		C2B41A8325612ED90087F036 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		C2B41A8625612F970087F036 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		C2B7E5AA255AA27500DBB611 /* stellar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stellar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2B7E5AD255AA27500DBB611 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2B7E5AF255AA27500DBB611 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C2B7E5B1255AA27500DBB611 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C2B7E5B4255AA27500DBB611 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C2B7E5B6255AA27900DBB611 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C2B7E5B9255AA27900DBB611 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C2B7E5BB255AA27900DBB611 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -131,6 +137,7 @@
 			children = (
 				C26EA539255D4EAC0007871A /* Person.swift */,
 				C26EA53C255D5BA20007871A /* Location.swift */,
+				C2AF67DD256903E200C9DA6A /* StellarDefaultCodable.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -164,6 +171,32 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		C2AF67E0256907D900C9DA6A /* Supports */ = {
+			isa = PBXGroup;
+			children = (
+				C2AF67E1256907E200C9DA6A /* LoadingOverlay */,
+			);
+			path = Supports;
+			sourceTree = "<group>";
+		};
+		C2AF67E1256907E200C9DA6A /* LoadingOverlay */ = {
+			isa = PBXGroup;
+			children = (
+				C2AF67E52569083700C9DA6A /* LoadingView */,
+				C2AF67E2256907F400C9DA6A /* LoadingOverlay.swift */,
+			);
+			path = LoadingOverlay;
+			sourceTree = "<group>";
+		};
+		C2AF67E52569083700C9DA6A /* LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				C2AF67E62569084C00C9DA6A /* LoadingView.swift */,
+				C2AF67EA2569085600C9DA6A /* LoadingView.xib */,
+			);
+			path = LoadingView;
+			sourceTree = "<group>";
+		};
 		C2B7E5A1255AA27500DBB611 = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +218,7 @@
 		C2B7E5AC255AA27500DBB611 /* stellar */ = {
 			isa = PBXGroup;
 			children = (
+				C2AF67E0256907D900C9DA6A /* Supports */,
 				C2A50BA5255FB18C00EB58AC /* Scenes */,
 				C26EA538255D4E540007871A /* Models */,
 				C26EA536255D4DCE0007871A /* Services */,
@@ -193,7 +227,6 @@
 				C2B7E5AD255AA27500DBB611 /* AppDelegate.swift */,
 				C2B7E5AF255AA27500DBB611 /* SceneDelegate.swift */,
 				C2B7E5B1255AA27500DBB611 /* ViewController.swift */,
-				C2B7E5B3255AA27500DBB611 /* Main.storyboard */,
 				C2B7E5B6255AA27900DBB611 /* Assets.xcassets */,
 				C2B7E5B8255AA27900DBB611 /* LaunchScreen.storyboard */,
 				C2B7E5BB255AA27900DBB611 /* Info.plist */,
@@ -294,8 +327,8 @@
 				C2A50BB2255FBAF000EB58AC /* HomeViewController.storyboard in Resources */,
 				C2B7E5BA255AA27900DBB611 /* LaunchScreen.storyboard in Resources */,
 				C2C141B12561244600D81DC2 /* CardView.xib in Resources */,
+				C2AF67EB2569085600C9DA6A /* LoadingView.xib in Resources */,
 				C2B7E5B7255AA27900DBB611 /* Assets.xcassets in Resources */,
-				C2B7E5B5255AA27500DBB611 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2AF67DE256903E200C9DA6A /* StellarDefaultCodable.swift in Sources */,
 				C2B7E5B2255AA27500DBB611 /* ViewController.swift in Sources */,
 				C254992C2565581B0031D7D8 /* LocalStorageService.swift in Sources */,
 				C2A50BAC255FB45200EB58AC /* HomeViewModel.swift in Sources */,
@@ -355,6 +389,7 @@
 				C26EA544255D73580007871A /* CandidateTargets.swift in Sources */,
 				C2A50BA8255FB44800EB58AC /* HomeViewController.swift in Sources */,
 				C26EA55D255D7A8C0007871A /* Rx+Extension.swift in Sources */,
+				C2AF67E72569084C00C9DA6A /* LoadingView.swift in Sources */,
 				C2DDB95D255BE14900224821 /* TargetType+rawTarget.swift in Sources */,
 				C26EA560255D7D810007871A /* NetworkLoggerPlugin+Extension.swift in Sources */,
 				C2DDB959255BE11C00224821 /* RequestTimeoutPlugin.swift in Sources */,
@@ -364,6 +399,7 @@
 				C238DD0825669B160043EF88 /* PanGestureRecognizer+Extension.swift in Sources */,
 				C26EA54B255D770B0007871A /* Environment.swift in Sources */,
 				C2B41A8725612F970087F036 /* Colors.swift in Sources */,
+				C2AF67E3256907F400C9DA6A /* LoadingOverlay.swift in Sources */,
 				C2B7E5B0255AA27500DBB611 /* SceneDelegate.swift in Sources */,
 				C2A50BB6255FBBA800EB58AC /* CardView.swift in Sources */,
 				C2B41A8425612ED90087F036 /* UIView+Extension.swift in Sources */,
@@ -378,14 +414,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C2B7E5B3255AA27500DBB611 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C2B7E5B4255AA27500DBB611 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C2B7E5B8255AA27900DBB611 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

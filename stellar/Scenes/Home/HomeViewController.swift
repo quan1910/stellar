@@ -15,6 +15,9 @@ final class HomeViewController: UIViewController {
     private let candidateService: CandidateServiceType = AppEnvironment.current.candidateService
     private let localStorageService: LocalStorageServiceType = AppEnvironment.current.localStorageService
     
+    @IBOutlet private weak var myFavoriteBtn: UIButton!
+    @IBOutlet private weak var reloadBtn: UIButton!
+    
     private let disposeBag = DisposeBag()
     private var cards = [CardView]()
     
@@ -40,6 +43,7 @@ final class HomeViewController: UIViewController {
     
         configureView()
         configureFlow()
+        configureAction()
     }
     
     private func configureView() {
@@ -57,6 +61,8 @@ final class HomeViewController: UIViewController {
     }
     
     private func configureData(_ persons: [Person]) {
+        removeAllCards()
+        
         for person in persons {
             let card = CardView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width - 60, height: self.view.frame.height * 0.6))
             card.configureModel(person)
@@ -66,7 +72,15 @@ final class HomeViewController: UIViewController {
         layoutCards()
     }
     
-    func layoutCards() {
+    private func removeAllCards() {
+        for card in cards {
+            card.removeFromSuperview()
+        }
+        
+        cards.removeAll()
+    }
+    
+    private func layoutCards() {
         // Setup first car
         guard let firstCard = cards.first else { return }
         self.view.addSubview(firstCard)
@@ -241,12 +255,12 @@ final class HomeViewController: UIViewController {
     }
     
     private func handleLogicCardStatus(_ card: CardView) {
+        guard let model = card.personModel else { return }
         switch card.currentStatus {
         case .like:
-            guard let model = card.personModel else { return }
             homeViewModel.addFavorite(model)
         case .nah:
-            break
+            homeViewModel.removeFavorite(model)
         default:
             break
         }
@@ -298,5 +312,37 @@ final class HomeViewController: UIViewController {
     
     private func isCardShouldBeSwiped(_ card: CardView) -> Bool {
         return card.center.x > (self.view.center.x + offsetRequired) || card.center.x < (self.view.center.x - offsetRequired)
+    }
+}
+
+// MARK: Button action configuration
+extension HomeViewController {
+    private func configureAction() {
+        configureReloadTap()
+        configureFavoriteTap()
+    }
+    
+    private func configureFavoriteTap() {
+        myFavoriteBtn.rx.tap
+            .subscribeNext { [weak self] _ in
+                self?.loadFavoritesData()
+            }
+            .disposed(by: disposeBag)
+    }
+    
+    private func loadFavoritesData() {
+        homeViewModel.loadFavoritesDataStream()
+    }
+    
+    private func configureReloadTap() {
+        reloadBtn.rx.tap
+            .subscribeNext { [weak self] _ in
+                self?.reloadData()
+            }
+            .disposed(by: disposeBag)
+    }
+    
+    private func reloadData() {
+        homeViewModel.fetchCandidates()
     }
 }

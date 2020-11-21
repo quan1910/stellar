@@ -24,8 +24,8 @@ final class HomeViewModel: HomeViewModelProtocol {
     // Datas
     private let _personDataStream = BehaviorRelay<[Person]>(value: [])
     private var persons: [Person] = []
-    private var favoritePersons: [Person] = []
-    private let favoriteStorage = "favoritedCandidates"
+    private var favoritePersons: Set<Person> = []
+    private let favoriteStorageKey = "favoritedCandidates"
     
     // Actions
     private lazy var loadCandidatesAction = Action<Void, CandidateResponse> { [unowned self] in
@@ -47,26 +47,40 @@ final class HomeViewModel: HomeViewModelProtocol {
     }
     
     func addFavorite(_ person: Person) {
-        favoritePersons.append(person)
-        localStorageService.saveData(favoritePersons, key: favoriteStorage)
+        favoritePersons.insert(person)
+        localStorageService.saveData(favoritePersons, key: favoriteStorageKey)
     }
     
-    func getFavorites() -> [Person] {
-        return localStorageService.loadData(favoriteStorage, dataType: Person.self) ?? []
+    func removeFavorite(_ person: Person) {
+        favoritePersons.remove(person)
+        localStorageService.saveData(favoritePersons, key: favoriteStorageKey)
+    }
+    
+    func getFavorites() -> Set<Person> {
+        
+        return Set(localStorageService.loadData(favoriteStorageKey, dataType: Person.self) ?? [])
+    }
+    
+    func loadFavoritesDataStream() {
+        _personDataStream.accept(Array(getFavorites()))
     }
     
     private func configureFetchCandidates() {
 
         loadCandidatesAction
             .executing
-            .subscribeNext { [weak self] _ in
-                print("LOADING")
+            .subscribeNext { loading in
+                if loading {
+                    LoadingOverlay.setLoading(true)
+                }
+                
             }
             .disposed(by: disposeBag)
 
         loadCandidatesAction
             .elements
             .subscribeNext { [weak self] response in
+                LoadingOverlay.setLoading(false)
                 self?.persons = response.candidates
                 self?._personDataStream.accept(response.candidates)
             }
@@ -74,8 +88,8 @@ final class HomeViewModel: HomeViewModelProtocol {
 
         loadCandidatesAction
             .underlyingError
-            .subscribeNext { [weak self] error in
-                print("ERROR \(error)")
+            .subscribeNext { error in
+                LoadingOverlay.setLoading(false)
             }
             .disposed(by: disposeBag)
     }

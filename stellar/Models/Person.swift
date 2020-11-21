@@ -6,16 +6,15 @@
 //
 
 import Foundation
-import Foundation
 import ObjectMapper
 
-enum Gender: String, Codable {
+enum Gender: String, Codable, Hashable {
     case male
     case female
     case notDisclosed
 }
 
-struct Name: ImmutableMappable, Codable {
+struct Name: StellarDefaultCodable {
     var title: String?
     var first: String?
     var last: String?
@@ -27,7 +26,7 @@ struct Name: ImmutableMappable, Codable {
     }
 }
 
-struct DateOfBirth: ImmutableMappable, Codable {
+struct DateOfBirth: StellarDefaultCodable{
     var date: Date?
     var age: Int?
     
@@ -37,7 +36,7 @@ struct DateOfBirth: ImmutableMappable, Codable {
     }
 }
 
-struct Picture: ImmutableMappable, Codable {
+struct Picture: StellarDefaultCodable {
     var large: String?
     var medium: String?
     var thumbnail: String?
@@ -49,7 +48,7 @@ struct Picture: ImmutableMappable, Codable {
     }
 }
 
-struct Identity: ImmutableMappable, Codable {
+struct Identity: StellarDefaultCodable {
     var name: String?
     var value: String?
     
@@ -60,9 +59,9 @@ struct Identity: ImmutableMappable, Codable {
 }
 
 
-final class Person: ImmutableMappable, Codable {
+final class Person: StellarDefaultCodable {
 
-    var id: String?
+    var id: Identity?
     var gender: Gender?
     var name: Name?
     var picture: Picture?
@@ -74,7 +73,7 @@ final class Person: ImmutableMappable, Codable {
     var nat: String?
 
     public init(map: Map) throws {
-        id = try? map.value("name")
+        id = try? map.value("id")
         
         gender = try? map.value("gender", using: EnumTransform<Gender>())
         name = try? map.value("name")
@@ -137,5 +136,24 @@ final class Person: ImmutableMappable, Codable {
             
             return nil
         }
+    }
+}
+
+extension Person {
+    static func == (lhs: Person, rhs: Person) -> Bool {
+        return lhs.id == rhs.id &&
+            lhs.gender == rhs.gender &&
+            lhs.name == rhs.name &&
+            lhs.picture == rhs.picture &&
+            lhs.location == rhs.location &&
+            lhs.email == rhs.email &&
+            lhs.dob == rhs.dob &&
+            lhs.homePhone == rhs.homePhone &&
+            lhs.cellPhone == rhs.cellPhone &&
+            lhs.nat == rhs.nat
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
 }
