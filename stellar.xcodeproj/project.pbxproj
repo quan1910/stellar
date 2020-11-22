@@ -25,7 +25,6 @@
 		C29C2F97256A5A8F003F237B /* MockCandidateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29C2F96256A5A8F003F237B /* MockCandidateService.swift */; };
 		C2A50BA8255FB44800EB58AC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A50BA7255FB44800EB58AC /* HomeViewController.swift */; };
 		C2A50BAC255FB45200EB58AC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A50BAB255FB45200EB58AC /* HomeViewModel.swift */; };
-		C2A50BAF255FB8D700EB58AC /* HomeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A50BAE255FB8D700EB58AC /* HomeData.swift */; };
 		C2A50BB2255FBAF000EB58AC /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2A50BB1255FBAF000EB58AC /* HomeViewController.storyboard */; };
 		C2A50BB6255FBBA800EB58AC /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A50BB5255FBBA800EB58AC /* CardView.swift */; };
 		C2AF67DE256903E200C9DA6A /* StellarDefaultCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AF67DD256903E200C9DA6A /* StellarDefaultCodable.swift */; };
@@ -35,8 +34,6 @@
 		C2B41A8425612ED90087F036 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B41A8325612ED90087F036 /* UIView+Extension.swift */; };
 		C2B41A8725612F970087F036 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B41A8625612F970087F036 /* Colors.swift */; };
 		C2B7E5AE255AA27500DBB611 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B7E5AD255AA27500DBB611 /* AppDelegate.swift */; };
-		C2B7E5B0255AA27500DBB611 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B7E5AF255AA27500DBB611 /* SceneDelegate.swift */; };
-		C2B7E5B2255AA27500DBB611 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B7E5B1255AA27500DBB611 /* ViewController.swift */; };
 		C2B7E5B7255AA27900DBB611 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2B7E5B6255AA27900DBB611 /* Assets.xcassets */; };
 		C2B7E5BA255AA27900DBB611 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2B7E5B8255AA27900DBB611 /* LaunchScreen.storyboard */; };
 		C2C141B12561244600D81DC2 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2C141B02561244600D81DC2 /* CardView.xib */; };
@@ -80,7 +77,6 @@
 		C29C2F96256A5A8F003F237B /* MockCandidateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCandidateService.swift; sourceTree = "<group>"; };
 		C2A50BA7255FB44800EB58AC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C2A50BAB255FB45200EB58AC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		C2A50BAE255FB8D700EB58AC /* HomeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeData.swift; sourceTree = "<group>"; };
 		C2A50BB1255FBAF000EB58AC /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
 		C2A50BB5255FBBA800EB58AC /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		C2AF67DD256903E200C9DA6A /* StellarDefaultCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StellarDefaultCodable.swift; sourceTree = "<group>"; };
@@ -91,8 +87,6 @@
 		C2B41A8625612F970087F036 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		C2B7E5AA255AA27500DBB611 /* Stellar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stellar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2B7E5AD255AA27500DBB611 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C2B7E5AF255AA27500DBB611 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C2B7E5B1255AA27500DBB611 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C2B7E5B6255AA27900DBB611 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C2B7E5B9255AA27900DBB611 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C2B7E5BB255AA27900DBB611 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -208,7 +202,6 @@
 				C2A50BB4255FBB9A00EB58AC /* Views */,
 				C2A50BA7255FB44800EB58AC /* HomeViewController.swift */,
 				C2A50BAB255FB45200EB58AC /* HomeViewModel.swift */,
-				C2A50BAE255FB8D700EB58AC /* HomeData.swift */,
 				C2A50BB1255FBAF000EB58AC /* HomeViewController.storyboard */,
 			);
 			path = Home;
@@ -279,8 +272,6 @@
 				C2DDB913255BD51D00224821 /* Extension */,
 				C2DDB912255BD51800224821 /* Network */,
 				C2B7E5AD255AA27500DBB611 /* AppDelegate.swift */,
-				C2B7E5AF255AA27500DBB611 /* SceneDelegate.swift */,
-				C2B7E5B1255AA27500DBB611 /* ViewController.swift */,
 				C2B7E5B6255AA27900DBB611 /* Assets.xcassets */,
 				C2B7E5B8255AA27900DBB611 /* LaunchScreen.storyboard */,
 				C2B7E5BB255AA27900DBB611 /* Info.plist */,
@@ -518,7 +509,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2AF67DE256903E200C9DA6A /* StellarDefaultCodable.swift in Sources */,
-				C2B7E5B2255AA27500DBB611 /* ViewController.swift in Sources */,
 				C254992C2565581B0031D7D8 /* LocalStorageService.swift in Sources */,
 				C2A50BAC255FB45200EB58AC /* HomeViewModel.swift in Sources */,
 				C26EA540255D73470007871A /* CandidateService.swift in Sources */,
@@ -536,14 +526,12 @@
 				C26EA54B255D770B0007871A /* Environment.swift in Sources */,
 				C2B41A8725612F970087F036 /* Colors.swift in Sources */,
 				C2AF67E3256907F400C9DA6A /* LoadingOverlay.swift in Sources */,
-				C2B7E5B0255AA27500DBB611 /* SceneDelegate.swift in Sources */,
 				C2A50BB6255FBBA800EB58AC /* CardView.swift in Sources */,
 				C2B41A8425612ED90087F036 /* UIView+Extension.swift in Sources */,
 				C2DDB955255BDFFD00224821 /* API.swift in Sources */,
 				C26EA53A255D4EAC0007871A /* Person.swift in Sources */,
 				C26EA563255D7EEE0007871A /* CandidateResponse.swift in Sources */,
 				C2DDB960255BE19C00224821 /* DisableLocalCachePlugin.swift in Sources */,
-				C2A50BAF255FB8D700EB58AC /* HomeData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -631,7 +619,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -686,7 +674,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

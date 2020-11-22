@@ -66,16 +66,11 @@ final class CardView: UIView, NibOwnerLoadable {
         guard let urlString = model.picture?.large, let url = URL(string: urlString) else {
             return
         }
-        self.avatarImageView.kf.setImage(with: url, completionHandler:  { result in
-            
+        self.avatarImageView.kf.setImage(with: url, completionHandler: { result in
             switch result {
-            
             case .success:
-                
                 break
-                
             case .failure:
-                
                 break
             }
         })

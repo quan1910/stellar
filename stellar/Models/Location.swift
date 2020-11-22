@@ -28,16 +28,6 @@ struct Cordinate: StellarDefaultCodable {
     }
 }
 
-struct TimeZone: StellarDefaultCodable {
-    var offset: Double?
-    var description: String?
-    
-    public init(map: Map) throws {
-        offset = try? map.value("offset")
-        description = try? map.value("description")
-    }
-}
-
 struct Location: StellarDefaultCodable {
     var street: Street?
     var city: String?

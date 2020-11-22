@@ -32,21 +32,4 @@ struct AppEnvironment {
         }
         return last
     }
-
-    // Push a new environment onto the stack.
-    static func pushEnvironment(_ env: EnvironmentType) {
-        stack.append(env)
-    }
-
-    // Pop an environment off the stack.
-    @discardableResult
-    public static func popEnvironment() -> EnvironmentType? {
-        return stack.popLast()
-    }
-
-    // Replace the current environment with a new environment.
-    public static func replaceCurrentEnvironment(_ env: EnvironmentType) {
-        pushEnvironment(env)
-        stack.remove(at: stack.count - 2)
-    }
 }

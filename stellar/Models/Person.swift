@@ -58,7 +58,6 @@ struct Identity: StellarDefaultCodable {
     }
 }
 
-
 public final class Person: StellarDefaultCodable {
 
     var id: Identity?
