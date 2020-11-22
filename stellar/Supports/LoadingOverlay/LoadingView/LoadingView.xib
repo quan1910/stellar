@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoadingView" customModule="stellar" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoadingView" customModule="Stellar" customModuleProvider="target">
             <connections>
                 <outlet property="loadingIndicator" destination="t0w-3m-X5b" id="dSX-tB-kRy"/>
                 <outlet property="loadingLabel" destination="AX1-ku-slG" id="xW9-R8-0mD"/>

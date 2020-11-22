@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		32966B524B1C32EE4F193518 /* Pods_stellar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E5513D1E1E24116F5F5425 /* Pods_stellar.framework */; };
+		2A0B7BC7B9E061F0999F3C44 /* Pods_Stellar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52893CA5BF01A6475B1E8500 /* Pods_Stellar.framework */; };
 		C238DD0825669B160043EF88 /* PanGestureRecognizer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C238DD0725669B160043EF88 /* PanGestureRecognizer+Extension.swift */; };
+		C23B9420256A603D00B3CA56 /* MockCandidateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23B941F256A603D00B3CA56 /* MockCandidateData.swift */; };
+		C23B943D256A627300B3CA56 /* MockLocalStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23B943C256A627300B3CA56 /* MockLocalStorageService.swift */; };
 		C254992C2565581B0031D7D8 /* LocalStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C254992B2565581B0031D7D8 /* LocalStorageService.swift */; };
 		C26EA53A255D4EAC0007871A /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26EA539255D4EAC0007871A /* Person.swift */; };
 		C26EA53D255D5BA20007871A /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26EA53C255D5BA20007871A /* Location.swift */; };
@@ -19,6 +21,8 @@
 		C26EA55D255D7A8C0007871A /* Rx+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26EA55C255D7A8C0007871A /* Rx+Extension.swift */; };
 		C26EA560255D7D810007871A /* NetworkLoggerPlugin+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26EA55F255D7D810007871A /* NetworkLoggerPlugin+Extension.swift */; };
 		C26EA563255D7EEE0007871A /* CandidateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26EA562255D7EEE0007871A /* CandidateResponse.swift */; };
+		C29C2F92256A595A003F237B /* HomeViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29C2F91256A595A003F237B /* HomeViewModelSpec.swift */; };
+		C29C2F97256A5A8F003F237B /* MockCandidateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29C2F96256A5A8F003F237B /* MockCandidateService.swift */; };
 		C2A50BA8255FB44800EB58AC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A50BA7255FB44800EB58AC /* HomeViewController.swift */; };
 		C2A50BAC255FB45200EB58AC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A50BAB255FB45200EB58AC /* HomeViewModel.swift */; };
 		C2A50BAF255FB8D700EB58AC /* HomeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A50BAE255FB8D700EB58AC /* HomeData.swift */; };
@@ -40,22 +44,40 @@
 		C2DDB959255BE11C00224821 /* RequestTimeoutPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DDB958255BE11C00224821 /* RequestTimeoutPlugin.swift */; };
 		C2DDB95D255BE14900224821 /* TargetType+rawTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DDB95C255BE14900224821 /* TargetType+rawTarget.swift */; };
 		C2DDB960255BE19C00224821 /* DisableLocalCachePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DDB95F255BE19C00224821 /* DisableLocalCachePlugin.swift */; };
+		C598A7DFD62BC982F4947247 /* Pods_StellarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95738B469159B05BA9CB8773 /* Pods_StellarTests.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		C2DD77FD256A58F000704340 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C2B7E5A2255AA27500DBB611 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C2B7E5A9255AA27500DBB611;
+			remoteInfo = Stellar;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		20E5513D1E1E24116F5F5425 /* Pods_stellar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_stellar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7A05EBD9EDE60FC06E6B3078 /* Pods-stellar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stellar.release.xcconfig"; path = "Target Support Files/Pods-stellar/Pods-stellar.release.xcconfig"; sourceTree = "<group>"; };
+		10945A105E337F1BAA8BBFBF /* Pods-StellarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StellarTests.debug.xcconfig"; path = "Target Support Files/Pods-StellarTests/Pods-StellarTests.debug.xcconfig"; sourceTree = "<group>"; };
+		52893CA5BF01A6475B1E8500 /* Pods_Stellar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stellar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A05EBD9EDE60FC06E6B3078 /* Pods-Stellar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stellar.release.xcconfig"; path = "Target Support Files/Pods-Stellar/Pods-Stellar.release.xcconfig"; sourceTree = "<group>"; };
+		95738B469159B05BA9CB8773 /* Pods_StellarTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StellarTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BECA34DB9AB183CA60E2F51B /* Pods-StellarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StellarTests.release.xcconfig"; path = "Target Support Files/Pods-StellarTests/Pods-StellarTests.release.xcconfig"; sourceTree = "<group>"; };
 		C238DD0725669B160043EF88 /* PanGestureRecognizer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PanGestureRecognizer+Extension.swift"; sourceTree = "<group>"; };
+		C23B941F256A603D00B3CA56 /* MockCandidateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCandidateData.swift; sourceTree = "<group>"; };
+		C23B943C256A627300B3CA56 /* MockLocalStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocalStorageService.swift; sourceTree = "<group>"; };
 		C254992B2565581B0031D7D8 /* LocalStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageService.swift; sourceTree = "<group>"; };
 		C26EA539255D4EAC0007871A /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		C26EA53C255D5BA20007871A /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		C26EA53F255D73470007871A /* CandidateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidateService.swift; sourceTree = "<group>"; };
 		C26EA543255D73580007871A /* CandidateTargets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidateTargets.swift; sourceTree = "<group>"; };
-		C26EA546255D74360007871A /* TargetType+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TargetType+Extensions.swift"; path = "stellar/Network/TargetType+Extensions.swift"; sourceTree = SOURCE_ROOT; };
+		C26EA546255D74360007871A /* TargetType+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TargetType+Extensions.swift"; path = "Stellar/Network/TargetType+Extensions.swift"; sourceTree = SOURCE_ROOT; };
 		C26EA54A255D770B0007871A /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		C26EA55C255D7A8C0007871A /* Rx+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx+Extension.swift"; sourceTree = "<group>"; };
 		C26EA55F255D7D810007871A /* NetworkLoggerPlugin+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkLoggerPlugin+Extension.swift"; sourceTree = "<group>"; };
 		C26EA562255D7EEE0007871A /* CandidateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidateResponse.swift; sourceTree = "<group>"; };
+		C29C2F91256A595A003F237B /* HomeViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelSpec.swift; sourceTree = "<group>"; };
+		C29C2F96256A5A8F003F237B /* MockCandidateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCandidateService.swift; sourceTree = "<group>"; };
 		C2A50BA7255FB44800EB58AC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C2A50BAB255FB45200EB58AC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		C2A50BAE255FB8D700EB58AC /* HomeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeData.swift; sourceTree = "<group>"; };
@@ -67,7 +89,7 @@
 		C2AF67EA2569085600C9DA6A /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		C2B41A8325612ED90087F036 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		C2B41A8625612F970087F036 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		C2B7E5AA255AA27500DBB611 /* stellar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stellar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2B7E5AA255AA27500DBB611 /* Stellar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stellar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2B7E5AD255AA27500DBB611 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2B7E5AF255AA27500DBB611 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C2B7E5B1255AA27500DBB611 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,11 +97,13 @@
 		C2B7E5B9255AA27900DBB611 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C2B7E5BB255AA27900DBB611 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2C141B02561244600D81DC2 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
+		C2DD77F8256A58F000704340 /* StellarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StellarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2DD77FC256A58F000704340 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2DDB954255BDFFD00224821 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		C2DDB958255BE11C00224821 /* RequestTimeoutPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTimeoutPlugin.swift; sourceTree = "<group>"; };
 		C2DDB95C255BE14900224821 /* TargetType+rawTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TargetType+rawTarget.swift"; sourceTree = "<group>"; };
 		C2DDB95F255BE19C00224821 /* DisableLocalCachePlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisableLocalCachePlugin.swift; sourceTree = "<group>"; };
-		C912C53AF3FE746D5B8BECC3 /* Pods-stellar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stellar.debug.xcconfig"; path = "Target Support Files/Pods-stellar/Pods-stellar.debug.xcconfig"; sourceTree = "<group>"; };
+		C912C53AF3FE746D5B8BECC3 /* Pods-Stellar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stellar.debug.xcconfig"; path = "Target Support Files/Pods-Stellar/Pods-Stellar.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +111,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32966B524B1C32EE4F193518 /* Pods_stellar.framework in Frameworks */,
+				2A0B7BC7B9E061F0999F3C44 /* Pods_Stellar.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2DD77F5256A58F000704340 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C598A7DFD62BC982F4947247 /* Pods_StellarTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,8 +129,10 @@
 		52EC232C9F7B6516028515D8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C912C53AF3FE746D5B8BECC3 /* Pods-stellar.debug.xcconfig */,
-				7A05EBD9EDE60FC06E6B3078 /* Pods-stellar.release.xcconfig */,
+				C912C53AF3FE746D5B8BECC3 /* Pods-Stellar.debug.xcconfig */,
+				7A05EBD9EDE60FC06E6B3078 /* Pods-Stellar.release.xcconfig */,
+				10945A105E337F1BAA8BBFBF /* Pods-StellarTests.debug.xcconfig */,
+				BECA34DB9AB183CA60E2F51B /* Pods-StellarTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -106,9 +140,18 @@
 		9646F157178A262F8A30F402 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				20E5513D1E1E24116F5F5425 /* Pods_stellar.framework */,
+				52893CA5BF01A6475B1E8500 /* Pods_Stellar.framework */,
+				95738B469159B05BA9CB8773 /* Pods_StellarTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C23B941E256A602100B3CA56 /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+				C23B941F256A603D00B3CA56 /* MockCandidateData.swift */,
+			);
+			path = MockData;
 			sourceTree = "<group>";
 		};
 		C26EA536255D4DCE0007871A /* Services */ = {
@@ -140,6 +183,15 @@
 				C2AF67DD256903E200C9DA6A /* StellarDefaultCodable.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		C29C2F95256A5A7D003F237B /* MockServices */ = {
+			isa = PBXGroup;
+			children = (
+				C29C2F96256A5A8F003F237B /* MockCandidateService.swift */,
+				C23B943C256A627300B3CA56 /* MockLocalStorageService.swift */,
+			);
+			path = MockServices;
 			sourceTree = "<group>";
 		};
 		C2A50BA5255FB18C00EB58AC /* Scenes */ = {
@@ -200,7 +252,8 @@
 		C2B7E5A1255AA27500DBB611 = {
 			isa = PBXGroup;
 			children = (
-				C2B7E5AC255AA27500DBB611 /* stellar */,
+				C2B7E5AC255AA27500DBB611 /* Stellar */,
+				C2DD77F9256A58F000704340 /* StellarTests */,
 				C2B7E5AB255AA27500DBB611 /* Products */,
 				52EC232C9F7B6516028515D8 /* Pods */,
 				9646F157178A262F8A30F402 /* Frameworks */,
@@ -210,12 +263,13 @@
 		C2B7E5AB255AA27500DBB611 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C2B7E5AA255AA27500DBB611 /* stellar.app */,
+				C2B7E5AA255AA27500DBB611 /* Stellar.app */,
+				C2DD77F8256A58F000704340 /* StellarTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C2B7E5AC255AA27500DBB611 /* stellar */ = {
+		C2B7E5AC255AA27500DBB611 /* Stellar */ = {
 			isa = PBXGroup;
 			children = (
 				C2AF67E0256907D900C9DA6A /* Supports */,
@@ -231,7 +285,18 @@
 				C2B7E5B8255AA27900DBB611 /* LaunchScreen.storyboard */,
 				C2B7E5BB255AA27900DBB611 /* Info.plist */,
 			);
-			path = stellar;
+			path = Stellar;
+			sourceTree = "<group>";
+		};
+		C2DD77F9256A58F000704340 /* StellarTests */ = {
+			isa = PBXGroup;
+			children = (
+				C23B941E256A602100B3CA56 /* MockData */,
+				C29C2F95256A5A7D003F237B /* MockServices */,
+				C2DD77FC256A58F000704340 /* Info.plist */,
+				C29C2F91256A595A003F237B /* HomeViewModelSpec.swift */,
+			);
+			path = StellarTests;
 			sourceTree = "<group>";
 		};
 		C2DDB912255BD51800224821 /* Network */ = {
@@ -268,9 +333,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C2B7E5A9255AA27500DBB611 /* stellar */ = {
+		C2B7E5A9255AA27500DBB611 /* Stellar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C2B7E5BE255AA27900DBB611 /* Build configuration list for PBXNativeTarget "stellar" */;
+			buildConfigurationList = C2B7E5BE255AA27900DBB611 /* Build configuration list for PBXNativeTarget "Stellar" */;
 			buildPhases = (
 				20B5E171C410CB9BBC05B3E5 /* [CP] Check Pods Manifest.lock */,
 				C2B7E5A6255AA27500DBB611 /* Sources */,
@@ -282,10 +347,30 @@
 			);
 			dependencies = (
 			);
-			name = stellar;
-			productName = stellar;
-			productReference = C2B7E5AA255AA27500DBB611 /* stellar.app */;
+			name = Stellar;
+			productName = Stellar;
+			productReference = C2B7E5AA255AA27500DBB611 /* Stellar.app */;
 			productType = "com.apple.product-type.application";
+		};
+		C2DD77F7256A58F000704340 /* StellarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C2DD77FF256A58F000704340 /* Build configuration list for PBXNativeTarget "StellarTests" */;
+			buildPhases = (
+				910F1AC25254411675377E64 /* [CP] Check Pods Manifest.lock */,
+				C2DD77F4256A58F000704340 /* Sources */,
+				C2DD77F5256A58F000704340 /* Frameworks */,
+				C2DD77F6256A58F000704340 /* Resources */,
+				9CD551C4F40EFB175C60D176 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C2DD77FE256A58F000704340 /* PBXTargetDependency */,
+			);
+			name = StellarTests;
+			productName = StellarTests;
+			productReference = C2DD77F8256A58F000704340 /* StellarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -299,9 +384,13 @@
 					C2B7E5A9255AA27500DBB611 = {
 						CreatedOnToolsVersion = 12.0.1;
 					};
+					C2DD77F7256A58F000704340 = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = C2B7E5A9255AA27500DBB611;
+					};
 				};
 			};
-			buildConfigurationList = C2B7E5A5255AA27500DBB611 /* Build configuration list for PBXProject "stellar" */;
+			buildConfigurationList = C2B7E5A5255AA27500DBB611 /* Build configuration list for PBXProject "Stellar" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -314,7 +403,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C2B7E5A9255AA27500DBB611 /* stellar */,
+				C2B7E5A9255AA27500DBB611 /* Stellar */,
+				C2DD77F7256A58F000704340 /* StellarTests */,
 			);
 		};
 /* End PBXProject section */
@@ -329,6 +419,13 @@
 				C2C141B12561244600D81DC2 /* CardView.xib in Resources */,
 				C2AF67EB2569085600C9DA6A /* LoadingView.xib in Resources */,
 				C2B7E5B7255AA27900DBB611 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2DD77F6256A58F000704340 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,7 +447,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-stellar-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Stellar-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -363,15 +460,54 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-stellar/Pods-stellar-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Stellar/Pods-Stellar-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-stellar/Pods-stellar-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Stellar/Pods-Stellar-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-stellar/Pods-stellar-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Stellar/Pods-Stellar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		910F1AC25254411675377E64 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StellarTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9CD551C4F40EFB175C60D176 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StellarTests/Pods-StellarTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StellarTests/Pods-StellarTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StellarTests/Pods-StellarTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -411,7 +547,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C2DD77F4256A58F000704340 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C23B943D256A627300B3CA56 /* MockLocalStorageService.swift in Sources */,
+				C29C2F97256A5A8F003F237B /* MockCandidateService.swift in Sources */,
+				C23B9420256A603D00B3CA56 /* MockCandidateData.swift in Sources */,
+				C29C2F92256A595A003F237B /* HomeViewModelSpec.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C2DD77FE256A58F000704340 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C2B7E5A9255AA27500DBB611 /* Stellar */;
+			targetProxy = C2DD77FD256A58F000704340 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C2B7E5B8255AA27900DBB611 /* LaunchScreen.storyboard */ = {
@@ -543,18 +698,18 @@
 		};
 		C2B7E5BF255AA27900DBB611 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C912C53AF3FE746D5B8BECC3 /* Pods-stellar.debug.xcconfig */;
+			baseConfigurationReference = C912C53AF3FE746D5B8BECC3 /* Pods-Stellar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6999CF9WMN;
-				INFOPLIST_FILE = stellar/Info.plist;
+				INFOPLIST_FILE = Stellar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.quan.stellar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.quan.Stellar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -563,28 +718,70 @@
 		};
 		C2B7E5C0255AA27900DBB611 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7A05EBD9EDE60FC06E6B3078 /* Pods-stellar.release.xcconfig */;
+			baseConfigurationReference = 7A05EBD9EDE60FC06E6B3078 /* Pods-Stellar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6999CF9WMN;
-				INFOPLIST_FILE = stellar/Info.plist;
+				INFOPLIST_FILE = Stellar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.quan.stellar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.quan.Stellar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
+		C2DD7800256A58F000704340 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10945A105E337F1BAA8BBFBF /* Pods-StellarTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6999CF9WMN;
+				INFOPLIST_FILE = StellarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.quan.StellarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stellar.app/Stellar";
+			};
+			name = Debug;
+		};
+		C2DD7801256A58F000704340 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BECA34DB9AB183CA60E2F51B /* Pods-StellarTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6999CF9WMN;
+				INFOPLIST_FILE = StellarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.quan.StellarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stellar.app/Stellar";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C2B7E5A5255AA27500DBB611 /* Build configuration list for PBXProject "stellar" */ = {
+		C2B7E5A5255AA27500DBB611 /* Build configuration list for PBXProject "Stellar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C2B7E5BC255AA27900DBB611 /* Debug */,
@@ -593,11 +790,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C2B7E5BE255AA27900DBB611 /* Build configuration list for PBXNativeTarget "stellar" */ = {
+		C2B7E5BE255AA27900DBB611 /* Build configuration list for PBXNativeTarget "Stellar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C2B7E5BF255AA27900DBB611 /* Debug */,
 				C2B7E5C0255AA27900DBB611 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C2DD77FF256A58F000704340 /* Build configuration list for PBXNativeTarget "StellarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2DD7800256A58F000704340 /* Debug */,
+				C2DD7801256A58F000704340 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

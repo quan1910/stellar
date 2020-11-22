@@ -1,6 +1,6 @@
 //
 //  HomeViewModel.swift
-//  stellar
+//  Stellar
 //
 //  Created by Nguyen Minh Quan on 11/14/20.
 //
@@ -10,12 +10,23 @@ import Action
 import RxSwift
 import RxCocoa
 
-protocol HomeViewModelProtocol {
-    
+protocol HomeViewModelType {
     var personDataStream: Observable<[Person]> { get }
+    var reloadTrigger: PublishRelay<Void> { get }
+    var viewDidLoadTrigger: PublishRelay<Void> { get }
+    var viewFavoriteTrigger: PublishRelay<Void> { get }
+    var addFavoriteTrigger: PublishRelay<Person> { get }
+    var removeFavoriteTrigger: PublishRelay<Person> { get }
 }
 
-final class HomeViewModel: HomeViewModelProtocol {
+final class HomeViewModel: HomeViewModelType {
+    
+    // Listener
+    var reloadTrigger = PublishRelay<Void>()
+    var viewDidLoadTrigger = PublishRelay<Void>()
+    var viewFavoriteTrigger = PublishRelay<Void>()
+    var addFavoriteTrigger = PublishRelay<Person>()
+    var removeFavoriteTrigger = PublishRelay<Person>()
 
     // Services
     private let candidateService: CandidateServiceType
@@ -39,30 +50,58 @@ final class HomeViewModel: HomeViewModelProtocol {
         self.candidateService = candidateService
         self.localStorageService = localStorageService
         configureFetchCandidates()
+        configureListener()
     }
 
-    func fetchCandidates() {
+    private func fetchCandidates() {
         loadCandidatesAction.execute()
         favoritePersons = getFavorites()
     }
     
-    func addFavorite(_ person: Person) {
+    private func addFavorite(_ person: Person) {
         favoritePersons.insert(person)
         localStorageService.saveData(favoritePersons, key: favoriteStorageKey)
     }
     
-    func removeFavorite(_ person: Person) {
+    private func removeFavorite(_ person: Person) {
         favoritePersons.remove(person)
         localStorageService.saveData(favoritePersons, key: favoriteStorageKey)
     }
     
-    func getFavorites() -> Set<Person> {
+    private func getFavorites() -> Set<Person> {
         
         return Set(localStorageService.loadData(favoriteStorageKey, dataType: Person.self) ?? [])
     }
     
-    func loadFavoritesDataStream() {
+    private func loadFavoritesDataStream() {
         _personDataStream.accept(Array(getFavorites()))
+    }
+    
+    private func configureListener() {
+        reloadTrigger.subscribeNext { [weak self] _ in
+            self?.fetchCandidates()
+        }
+        .disposed(by: disposeBag)
+        
+        viewFavoriteTrigger.subscribeNext { [weak self] _ in
+            self?.loadFavoritesDataStream()
+        }
+        .disposed(by: disposeBag)
+        
+        viewDidLoadTrigger.subscribeNext { [weak self] _ in
+            self?.fetchCandidates()
+        }
+        .disposed(by: disposeBag)
+        
+        addFavoriteTrigger.subscribeNext { [weak self] in
+            self?.addFavorite($0)
+        }
+        .disposed(by: disposeBag)
+        
+        removeFavoriteTrigger.subscribeNext { [weak self] in
+            self?.removeFavorite($0)
+        }
+        .disposed(by: disposeBag)
     }
     
     private func configureFetchCandidates() {

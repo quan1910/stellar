@@ -1,6 +1,6 @@
 //
 //  LoadingView.swift
-//  stellar
+//  Stellar
 //
 //  Created by Nguyen Minh Quan on 11/21/20.
 //

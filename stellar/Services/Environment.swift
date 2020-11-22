@@ -1,6 +1,6 @@
 //
 //  Environment.swift
-//  stellar
+//  Stellar
 //
 //  Created by Nguyen Minh Quan on 11/12/20.
 //

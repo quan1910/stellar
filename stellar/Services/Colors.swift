@@ -1,6 +1,6 @@
 //
 //  Color.swift
-//  stellar
+//  Stellar
 //
 //  Created by Nguyen Minh Quan on 11/15/20.
 //

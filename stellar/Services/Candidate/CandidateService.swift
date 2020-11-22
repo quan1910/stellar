@@ -1,6 +1,6 @@
 //
 //  CandidateService.swift
-//  stellar
+//  Stellar
 //
 //  Created by Nguyen Minh Quan on 11/12/20.
 //
@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 import Moya_ObjectMapper
 
-protocol CandidateServiceType {
+public protocol CandidateServiceType {
 
     func getCandidates(offset: Int) -> Observable<CandidateResponse>
 }
@@ -22,7 +22,7 @@ public class CandidateService: CandidateServiceType {
         self.api = api
     }
 
-    func getCandidates(offset: Int) -> Observable<CandidateResponse> {
+    public func getCandidates(offset: Int) -> Observable<CandidateResponse> {
 
         let listTarget = CandidateTargets.ListTarget(
             offset: offset

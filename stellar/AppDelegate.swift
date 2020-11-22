@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  stellar
+//  Stellar
 //
 //  Created by Nguyen Minh Quan on 11/10/20.
 //

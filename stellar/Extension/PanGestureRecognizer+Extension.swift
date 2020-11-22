@@ -1,6 +1,6 @@
 //
 //  PanGestureRecognizer+Extension.swift
-//  stellar
+//  Stellar
 //
 //  Created by Nguyen Minh Quan on 11/19/20.
 //

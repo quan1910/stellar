@@ -1,6 +1,6 @@
 //
 //  HomeViewController.swift
-//  stellar
+//  Stellar
 //
 //  Created by Nguyen Minh Quan on 11/14/20.
 //
@@ -21,7 +21,7 @@ final class HomeViewController: UIViewController {
     private let disposeBag = DisposeBag()
     private var cards = [CardView]()
     
-    lazy var homeViewModel: HomeViewModel = {
+    lazy var homeViewModel: HomeViewModelType = {
         let viewModel = HomeViewModel(candidateService: candidateService,
                                       localStorageService: localStorageService)
         return viewModel
@@ -48,7 +48,7 @@ final class HomeViewController: UIViewController {
     
     private func configureView() {
         dynamicAnimator = UIDynamicAnimator(referenceView: self.view)
-        homeViewModel.fetchCandidates()
+        homeViewModel.viewDidLoadTrigger.accept(())
     }
     
     private func configureFlow() {
@@ -258,9 +258,9 @@ final class HomeViewController: UIViewController {
         guard let model = card.personModel else { return }
         switch card.currentStatus {
         case .like:
-            homeViewModel.addFavorite(model)
+            homeViewModel.addFavoriteTrigger.accept(model)
         case .nah:
-            homeViewModel.removeFavorite(model)
+            homeViewModel.removeFavoriteTrigger.accept(model)
         default:
             break
         }
@@ -325,24 +325,16 @@ extension HomeViewController {
     private func configureFavoriteTap() {
         myFavoriteBtn.rx.tap
             .subscribeNext { [weak self] _ in
-                self?.loadFavoritesData()
+                self?.homeViewModel.viewFavoriteTrigger.accept(())
             }
             .disposed(by: disposeBag)
-    }
-    
-    private func loadFavoritesData() {
-        homeViewModel.loadFavoritesDataStream()
     }
     
     private func configureReloadTap() {
         reloadBtn.rx.tap
             .subscribeNext { [weak self] _ in
-                self?.reloadData()
+                self?.homeViewModel.reloadTrigger.accept(())
             }
             .disposed(by: disposeBag)
-    }
-    
-    private func reloadData() {
-        homeViewModel.fetchCandidates()
     }
 }

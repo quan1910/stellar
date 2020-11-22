@@ -1,6 +1,6 @@
 //
 //  Person.swift
-//  stellar
+//  Stellar
 //
 //  Created by Nguyen Minh Quan on 11/12/20.
 //
@@ -59,7 +59,7 @@ struct Identity: StellarDefaultCodable {
 }
 
 
-final class Person: StellarDefaultCodable {
+public final class Person: StellarDefaultCodable {
 
     var id: Identity?
     var gender: Gender?
@@ -140,7 +140,7 @@ final class Person: StellarDefaultCodable {
 }
 
 extension Person {
-    static func == (lhs: Person, rhs: Person) -> Bool {
+    public static func == (lhs: Person, rhs: Person) -> Bool {
         return lhs.id == rhs.id &&
             lhs.gender == rhs.gender &&
             lhs.name == rhs.name &&
@@ -153,7 +153,7 @@ extension Person {
             lhs.nat == rhs.nat
     }
     
-    func hash(into hasher: inout Hasher) {
+    public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
 }

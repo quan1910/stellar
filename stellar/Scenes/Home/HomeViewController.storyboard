@@ -11,7 +11,7 @@
         <!--Home View Controller-->
         <scene sceneID="GWZ-ec-pwK">
             <objects>
-                <viewController id="mzF-eb-MCP" customClass="HomeViewController" customModule="stellar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mzF-eb-MCP" customClass="HomeViewController" customModule="Stellar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="glI-ON-oxd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

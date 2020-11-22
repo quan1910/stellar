@@ -1,6 +1,6 @@
 //
 //  API.swift
-//  stellar
+//  Stellar
 //
 //  Created by Nguyen Minh Quan on 11/11/20.
 //

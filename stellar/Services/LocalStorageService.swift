@@ -1,38 +1,38 @@
 //
 //  LocalStorageService.swift
-//  stellar
+//  Stellar
 //
 //  Created by Nguyen Minh Quan on 11/18/20.
 //
 
 import Foundation
 
-protocol LocalStorageServiceType {
+public protocol LocalStorageServiceType {
     func saveData<T: Codable>(_ data: T, key: String)
     func loadData<T: Decodable>(_ key: String, dataType: T.Type) -> [T]?
     func removeAll()
 }
 
-final class LocalStorageService: LocalStorageServiceType {
+public final class LocalStorageService: LocalStorageServiceType {
     
     private let userDefault: UserDefaults
     
-    init(userDefault: UserDefaults) {
+    public init(userDefault: UserDefaults) {
         self.userDefault = userDefault
     }
     
-    func removeAll() {
+    public func removeAll() {
         if let appDomain = Bundle.main.bundleIdentifier {
                 UserDefaults.standard.removePersistentDomain(forName: appDomain)
             }
     }
     
-    func saveData<T: Codable>(_ data: T, key: String) {
+    public func saveData<T: Codable>(_ data: T, key: String) {
         if let data = try? PropertyListEncoder().encode(data) {
             userDefault.setValue(data, forKey: key)
         }
     }
-    func loadData<T: Decodable>(_ key: String, dataType: T.Type) -> [T]? {
+    public func loadData<T: Decodable>(_ key: String, dataType: T.Type) -> [T]? {
         if let data = userDefault.data(forKey: key) {
             return try? PropertyListDecoder().decode([T].self, from: data)
         }
