@@ -58,6 +58,12 @@ final class HomeViewController: UIViewController {
                 self?.configureData(persons)
             }
             .disposed(by: disposeBag)
+        
+        homeViewModel.showFetchError
+            .subscribeNext { [weak self] _ in
+                self?.showLoadErrorAlert()
+            }
+            .disposed(by: disposeBag)
     }
     
     private func configureData(_ persons: [Person]) {
@@ -320,6 +326,16 @@ extension HomeViewController {
     private func configureAction() {
         configureReloadTap()
         configureFavoriteTap()
+        
+        let heartImg = UIImage(named: "heart")
+        myFavoriteBtn.setImage(heartImg, for: .normal)
+        myFavoriteBtn.tintColor = .red
+        myFavoriteBtn.setTitle(nil, for: .normal)
+        
+        let reloadImg = UIImage(named: "reload")
+        reloadBtn.setImage(reloadImg, for: .normal)
+        reloadBtn.tintColor = .gray
+        reloadBtn.setTitle(nil, for: .normal)
     }
     
     private func configureFavoriteTap() {
@@ -336,5 +352,15 @@ extension HomeViewController {
                 self?.homeViewModel.reloadTrigger.accept(())
             }
             .disposed(by: disposeBag)
+    }
+    
+    private func showLoadErrorAlert() {
+        let alert = UIAlertController(title: "Error", message: "There seem to be and error when loading from server", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: { [weak self]  _ in
+                        self?.homeViewModel.reloadTrigger.accept(())
+                    }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+                    present(alert, animated: true)
     }
 }

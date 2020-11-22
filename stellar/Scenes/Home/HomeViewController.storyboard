@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mzF-eb-MCP">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -17,11 +18,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NX6-4W-R59">
-                                <rect key="frame" x="319" y="60" width="79" height="30"/>
+                                <rect key="frame" x="350" y="60" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="29J-MT-a7h"/>
+                                    <constraint firstAttribute="width" secondItem="NX6-4W-R59" secondAttribute="height" multiplier="1:1" id="a3g-VJ-rXW"/>
+                                </constraints>
                                 <state key="normal" title="My Favorite"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1m-Jd-IUd">
-                                <rect key="frame" x="16" y="60" width="73" height="30"/>
+                                <rect key="frame" x="16" y="60" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="g1m-Jd-IUd" secondAttribute="height" id="ZQe-71-WsB"/>
+                                    <constraint firstAttribute="height" constant="48" id="ept-o0-wch"/>
+                                </constraints>
                                 <state key="normal" title="Let's reset"/>
                             </button>
                         </subviews>

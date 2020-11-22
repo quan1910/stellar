@@ -11,7 +11,11 @@ import RxSwift
 import RxCocoa
 
 protocol HomeViewModelType {
+    // Output
     var personDataStream: Observable<[Person]> { get }
+    var showFetchError: PublishRelay<Void> { get }
+    
+    // Input
     var reloadTrigger: PublishRelay<Void> { get }
     var viewDidLoadTrigger: PublishRelay<Void> { get }
     var viewFavoriteTrigger: PublishRelay<Void> { get }
@@ -32,9 +36,11 @@ final class HomeViewModel: HomeViewModelType {
     private let candidateService: CandidateServiceType
     private let localStorageService: LocalStorageServiceType
 
+    // Output
+    let showFetchError = PublishRelay<Void>()
+    
     // Datas
     private let _personDataStream = BehaviorRelay<[Person]>(value: [])
-    private var persons: [Person] = []
     private var favoritePersons: Set<Person> = []
     private let favoriteStorageKey = "favoritedCandidates"
     
@@ -120,15 +126,15 @@ final class HomeViewModel: HomeViewModelType {
             .elements
             .subscribeNext { [weak self] response in
                 LoadingOverlay.setLoading(false)
-                self?.persons = response.candidates
                 self?._personDataStream.accept(response.candidates)
             }
             .disposed(by: disposeBag)
 
         loadCandidatesAction
             .underlyingError
-            .subscribeNext { error in
+            .subscribeNext { [weak self] error in
                 LoadingOverlay.setLoading(false)
+                self?.showFetchError.accept(())
             }
             .disposed(by: disposeBag)
     }
