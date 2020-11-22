@@ -37,14 +37,9 @@ final class HomeViewModelSpec: QuickSpec {
 
         describe("HomeViewModel trigger") {
             beforeEach {
-                // Setup local storage service favorite person
-                
-
-                //mock current user profile
-
             }
 
-            context("viewDidLoad") {
+            context("viewDidLoadTrigger") {
                 beforeEach {
                     sut.viewDidLoadTrigger.accept(())
                 }
@@ -54,14 +49,49 @@ final class HomeViewModelSpec: QuickSpec {
                 }
             }
             
-            context("viewFavorite") {
+            context("viewFavoriteTrigger") {
                 beforeEach {
-                    sut.viewDidLoadTrigger.accept(())
                     sut.viewFavoriteTrigger.accept(())
                 }
 
                 it("should load favorite candidates") {
                     expect(localStorageService.invokedLoadData).to(beTrue())
+                }
+            }
+            
+            context("reloadTrigger") {
+                beforeEach {
+                    sut.reloadTrigger.accept(())
+                }
+
+                it("should fetch new candidates") {
+                    expect(candidateService.invokedGetCandidates).to(beTrue())
+                }
+            }
+            
+            context("addFavoriteTrigger") {
+                beforeEach {
+                    let mockCandidateDate = MockCandidateData()
+                    
+                    let person = mockCandidateDate.makePerson()!
+                    sut.addFavoriteTrigger.accept(person)
+                }
+
+                it("should add new favorite") {
+                    expect(localStorageService.invokedSaveData).to(beTrue())
+                }
+            }
+            
+            context("removeFavoriteTrigger") {
+                beforeEach {
+                    let mockCandidateDate = MockCandidateData()
+                    
+                    let person = mockCandidateDate.makePerson()!
+                    sut.removeFavoriteTrigger.accept(person)
+                }
+
+                it("should add new favorite") {
+                    expect(localStorageService.invokedSaveData).to(beTrue())
                 }
             }
         }

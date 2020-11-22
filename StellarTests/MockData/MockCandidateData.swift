@@ -12,6 +12,9 @@ import Stellar
 
 final class MockCandidateData {
     
+    let personJson = """
+                {"gender":"female","name":{"title":"Miss","first":"Kristen","last":"Adams"},"location":{"street":{"number":2367,"name":"Ash Dr"},"city":"Augusta","state":"California","country":"United States","postcode":49045,"coordinates":{"latitude":"86.6744","longitude":"148.2094"},"timezone":{"offset":"+2:00","description":"Kaliningrad, South Africa"}},"email":"kristen.adams@example.com","login":{"uuid":"80183001-6e73-4542-a257-0b782b9f6dba","username":"lazybird733","password":"fettish","salt":"3Emwqk3i","md5":"277d2b71caccfa4582820e64d1ac7b4f","sha1":"1407af7f1095caed7e353599e3ce877aa9b98967","sha256":"6f6aec7979252fc7cc3585d8d5f1403b0de648ff569f465e081c249e9404f646"},"dob":{"date":"1969-06-24T15:28:17.016Z","age":51},"registered":{"date":"2011-08-16T12:10:38.436Z","age":9},"phone":"(759)-387-6973","cell":"(360)-081-5789","id":{"name":"SSN","value":"946-04-4197"},"picture":{"large":"https://randomuser.me/api/portraits/women/16.jpg","medium":"https://randomuser.me/api/portraits/med/women/16.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/women/16.jpg"},"nat":"US"}
+    """
 
     let candidateResponseJson =
     """
@@ -20,5 +23,9 @@ final class MockCandidateData {
     
     func makeCandidateResponse() -> CandidateResponse {
         return CandidateResponse(JSONString: candidateResponseJson)!
+    }
+    
+    func makePerson() -> Person? {
+        return try? Person(JSONString: personJson)
     }
 }
