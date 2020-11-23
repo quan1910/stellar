@@ -6,7 +6,7 @@ A simple Tinder-style app.
 randomuser.me
 
 ## Demo
-![Alt Text](https://im2.ezgif.com/tmp/ezgif-2-b4c0fbd8ac09.gif)
+![Alt Text](https://i.imgur.com/7GFW5sD.gif)
 
 ## Usage:
 This is not a framework but a simple tinder-clone that implements MVVM, networking, UnitTests, PanGesture & DynamicAnimator
